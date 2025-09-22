@@ -8,7 +8,6 @@ module tb;
     result=sum_of_n_nos(arr);
     $display("sum=%0d",result);
   end
-  endmodule
 
   function int sum_of_n_nos(int data[]);
     static int sum=0;
@@ -17,4 +16,4 @@ module tb;
     end
     return sum;
   endfunction
-
+ endmodule
