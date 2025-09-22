@@ -10,7 +10,7 @@ module tb;
   end
   endmodule
 
-  function sum_of_n_nos(int data[]);
+  function int sum_of_n_nos(int data[]);
     static int sum=0;
     foreach(data[i])begin
       sum=sum+data[i];
