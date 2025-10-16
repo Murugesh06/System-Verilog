@@ -1,6 +1,7 @@
 class scoreboard;
   virtual dff_if vif;
   mailbox mon2scb;
+  event g;
   
   function new(virtual dff_if vif,mailbox mon2scb);
     this.vif=vif;
@@ -19,6 +20,8 @@ class scoreboard;
         else
           $display("FAIL");
         $display("------------------");
+        
+        ->g;
       end
   endtask
   
