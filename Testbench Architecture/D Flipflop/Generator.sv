@@ -2,6 +2,7 @@ class generator;
   transaction trans;
   virtual dff_if vif;
   mailbox gen2drv;
+  event g;
   
   function new(virtual dff_if vif,mailbox gen2drv);
     this.vif=vif;
@@ -16,6 +17,7 @@ class generator;
     gen2drv.put(trans);
     $display("Generator Data");
         $display("time=%0t clk=%0b rst=%0b d=%0b q=%0b",$time,vif.clk,vif.rst,trans.d,trans.q);
+        @(g);
       end
   endtask
   
