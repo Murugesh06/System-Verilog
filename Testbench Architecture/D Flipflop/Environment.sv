@@ -12,6 +12,7 @@ class environment;
   virtual dff_if vif;
   mailbox gen2drv;
   mailbox mon2scb;
+  event g;
   
   function new(virtual dff_if vif);
     this.vif=vif;
@@ -21,6 +22,8 @@ class environment;
     drv=new(vif,gen2drv);
     mon=new(vif,mon2scb);
     scb=new(vif,mon2scb);
+    gen.g=g;
+    scb.g=g;
   endfunction
   
   task test_run();
